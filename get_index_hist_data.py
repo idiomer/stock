@@ -27,6 +27,7 @@ for year in range(start_year, end_year+1):
     if len(year_data) > 0:
         year_data.to_csv(output_csv, compression='gzip')
         print year, 'finish. save to %s' % output_csv
+        time.sleep(10)
     else:
         print 'no %s data about %s' % (year, code)
 
