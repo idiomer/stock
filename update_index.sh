@@ -1,11 +1,13 @@
 #!/bin/bash
 
-index_codes="000001 000300 399001"
+# 上证指数 / 深证成指 / 沪深300 / 中证500
+index_codes="000001 399001 000300 000905"
 
-thisyear=`date +%Y`
+thisyear=$1
+thisyear=${thedate:-`date +%Y`}
 
 for code in ${index_codes}; do
-    python get_index_hist_data.py $code $thisyear $thisyear
+    python3 get_index_hist_data.py $code $thisyear $thisyear
 done
 
 
